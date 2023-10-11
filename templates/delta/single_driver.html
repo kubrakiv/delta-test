@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Driver{% endblock %}
+
+{% block content %}
+<!--<div class="mt-5 table-bordered">-->
+<!--    <h2>{{ driver.full_name }}</h2>-->
+<!--    <h2>{{ driver.company }}</h2>-->
+<!--    <h2>Дата початку роботи: {{ driver.start_date }}</h2>-->
+<!--    <h2>Заробітна плата: {{ driver.salary }}</h2>-->
+<!--    <button class="btn btn-primary">Pay</button>-->
+<!--</div>-->
+
+<div class="card mb-3 mt-5" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static '/images/bereziuk.png' %}" class="img-fluid rounded-start" alt="bereziuk">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ driver.full_name }}</h5>
+        <h5 class="card-title">{{ driver.company }}</h5>
+        <p class="card-text">Заробітна плата: {{ driver.salary }} EUR</p>
+        <p class="card-text"><small class="text-body-secondary">Дата початку роботи: {{ driver.start_date }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

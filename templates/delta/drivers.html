@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}All Drivers{% endblock %}
+
+{% block content %}
+<div class="table-responsive-md ms-5 me-5">
+    <table class="table align-middle mt-5 table-bordered border-primary table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Start Date</th>
+                <th>Salary</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            {% for driver in drivers %}
+            <tr>
+                <td>
+                    <a href={% url "delta:driver" driver.id %}>{{driver.full_name}}</a>
+                </td>
+                <td>{{driver.company}}</td>
+                <td>{{driver.start_date}}</td>
+                <td>{{driver.salary}}</td>
+                <td><button class="btn btn-primary">Pay</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
